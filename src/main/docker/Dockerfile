@@ -1,6 +1,6 @@
 FROM openjdk:11-jre-slim as builder
 WORKDIR application
-ADD target/${project.build.finalName}.jar ./
+ADD maven/${project.build.finalName}.jar ./
 RUN java -Djarmode=layertools -jar ${project.build.finalName}.jar extract
 
 FROM openjdk:11-jre-slim
